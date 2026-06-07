@@ -13,7 +13,6 @@ var links = [
             device: "both"
         }
     },
-
     {
         name: "Zen",
         icon: "timer--outlined",
@@ -28,7 +27,6 @@ var links = [
             device: "both"
         }
     },
-
     {
         name: "简单日历",
         icon: "date_range--outlined",
@@ -43,7 +41,6 @@ var links = [
             device: "both"
         }
     },
-
     {
         name: "震动测试",
         icon: "vibration--outlined",
@@ -58,7 +55,6 @@ var links = [
             device: "mobile"
         }
     },
-
     {
         name: "QpenForm",
         icon: "question_answer--outlined",
@@ -73,7 +69,6 @@ var links = [
             device: "both"
         }
     },
-
     {
         name: "TypeTo",
         icon: "keyboard--outlined",
@@ -88,7 +83,6 @@ var links = [
             device: "desktop"
         }
     },
-
     {
         name: "Passkey",
         icon: "password",
@@ -103,7 +97,6 @@ var links = [
             device: "both"
         }
     },
-
     {
         name: "VisualVoice",
         icon: "voicemail",
@@ -118,7 +111,6 @@ var links = [
             device: "both"
         }
     },
-
     {
         name: "Taple",
         icon: "table_chart--outlined",
@@ -133,7 +125,6 @@ var links = [
             device: "both"
         }
     },
-
     {
         name: "文本展示",
         icon: "smart_screen--outlined",
@@ -148,7 +139,6 @@ var links = [
             device: "both"
         }
     },
-
     {
         name: "UP主动态查看器",
         icon: "post_add",
@@ -163,7 +153,6 @@ var links = [
             device: "both"
         }
     },
-
     
     {
         name: "Alan Becker视频列表",
@@ -358,6 +347,20 @@ var links = [
             recommend: 29,
             lang: "cn",
             ui: "css",
+            device: "both"
+        }
+    },
+    {
+        name: "LessChat",
+        icon: "chat_bubble_outline",
+        desc: "Simple AI Chat UI",
+        url: "./proj/lesschat/index.html",
+        github: null,
+        slot: {
+            time: 26,
+            recommend: 43,
+            lang: "en",
+            ui: "mdui",
             device: "both"
         }
     }

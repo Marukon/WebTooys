@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LessChat</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&display=swap">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/mdui@2/mdui.css">
+    <script src="https://unpkg.com/mdui@2/mdui.global.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="8a96c320-b541-482f-acd4-6fc1b3ec22dc"></script>
+    <meta name="description" content="LessChat，简陋大模型API聊天/测试"></meta>
+    <meta name="description" content="功能少、操作简单，用于快速测试你的API可用性">
+</head>
+<body>
+    <mdui-top-app-bar scroll-behavior="elevate">
+        <mdui-tooltip content="Settings">
+            <mdui-button-icon icon="settings"></mdui-button-icon>
+        </mdui-tooltip>
+        <mdui-top-app-bar-title>LessChat</mdui-top-app-bar-title>
+        <div style="flex-grow: 1;"></div>
+        <mdui-tooltip content="Clear">
+            <mdui-button-icon icon="create"></mdui-button-icon>
+        </mdui-tooltip>
+    </mdui-top-app-bar>
+    <mdui-navigation-drawer close-on-esc close-on-overlay-click>
+        <div class="drawer-content">
+            <mdui-text-field variant="outlined" label="BaseURL" helper="/chat/completions">
+                <mdui-tooltip content="CORS Proxy via cors.forthezero.dpdns.org" placement="bottom-start" slot="icon">
+                    <mdui-button-icon icon="web_asset_off" selectable></mdui-button-icon>
+                </mdui-tooltip>
+            </mdui-text-field>
+            <mdui-text-field variant="outlined" label="API Key" type="password" toggle-password></mdui-text-field>
+            <mdui-text-field variant="outlined" label="Model"></mdui-text-field>
+            <div class="switch-line">
+                <span>Streaming Output</span>
+                <mdui-switch unchecked-icon="clear"></mdui-switch>
+            </div>
+            <mdui-button full-width>Save to LocalStorage</mdui-button>
+        </div>
+    </mdui-navigation-drawer>
+    <mdui-card variant="outlined" class="input">
+        <mdui-text-field variant="outlined" placeholder="Message"></mdui-text-field>
+        <mdui-button>Send</mdui-button>
+    </mdui-card>
+
+    <div class="main">
+        <!-- <mdui-card class="msg" clickable>
+            ask
+        </mdui-card>
+        <mdui-card class="msg" variant="filled" clickable>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Id unde, repellat commodi at nisi in porro! Consectetur reiciendis praesentium tempora odit quis enim nihil explicabo, itaque nostrum adipisci dolor officia?
+        </mdui-card> -->
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
