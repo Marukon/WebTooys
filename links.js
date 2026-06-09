@@ -187,7 +187,7 @@ var links = [
         icon: "link",
         desc: "(站外)生成你的长链接",
         url: "https://looooooooooooooooooooooooooooooooooooooooooooooooooooooooooog.forthezero.dpdns.org/",
-        github: null,
+        github: 'https://gist.github.com/for-the-zero/82cbed1e541a44ca84c46b34da1cc67d',
         slot: {
             time: 13.5,
             recommend: 40,
@@ -327,7 +327,7 @@ var links = [
         icon: "add_link",
         desc: "链接选择中转跳转器",
         url: "./builts/selinkt/",
-        github: null,
+        github: 'https://github.com/for-the-zero/practice.zip/tree/main/web/Selinkt',
         slot: {
             time: 24,
             recommend: 43,
