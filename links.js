@@ -363,6 +363,20 @@ var links = [
             ui: "mdui",
             device: "both"
         }
+    },
+    {
+        name: "Oheya",
+        icon: "local_library--outlined",
+        desc: "AI知识图谱引擎 / AI Knowledge Graph Engine",
+        url: "./builts/oheya/index.html",
+        github: 'https://github.com/for-the-zero/Oheya',
+        slot: {
+            time: 27,
+            recommend: 47,
+            lang: "both",
+            ui: "rv",
+            device: "both"
+        }
     }
 ];
 
