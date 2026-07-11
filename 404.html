@@ -46,6 +46,14 @@
 
     <script>
         (function(){
+            var path = window.location.pathname.replace(/\/+$/, '');
+            var dirs = ['/builts', '/vibe', '/proj'];
+            for(var d=0;d<dirs.length;d++){
+                if(path === dirs[d]){
+                    window.location.replace('/');
+                    return;
+                };
+            };
             console.log('[404] 脚本开始执行, 当前路径:', window.location.pathname);
             var hintEl = document.getElementById('hint2');
             function stripPrefix(path){
