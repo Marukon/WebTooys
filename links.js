@@ -7,7 +7,7 @@ var links = [
         github: null,
         slot: {
             time: 1,
-            recommend: 15,
+            recommend: -30,
             lang: "en",
             ui: "css",
             device: "both"
@@ -21,7 +21,7 @@ var links = [
         github: null,
         slot: {
             time: 2,
-            recommend: -15,
+            recommend: -70,
             lang: "cn",
             ui: "material-web",
             device: "both"
@@ -35,7 +35,7 @@ var links = [
         github: null,
         slot: {
             time: 3,
-            recommend: 38,
+            recommend: 340,
             lang: "cn",
             ui: "mdui",
             device: "both"
@@ -49,7 +49,7 @@ var links = [
         github: null,
         slot: {
             time: 4,
-            recommend: -35,
+            recommend: -420,
             lang: "cn",
             ui: "no",
             device: "mobile"
@@ -63,7 +63,7 @@ var links = [
         github: "https://github.com/for-the-zero/QpenForm",
         slot: {
             time: 5,
-            recommend: 4,
+            recommend: 50,
             lang: "cn",
             ui: "mdui",
             device: "both"
@@ -77,7 +77,7 @@ var links = [
         github: null,
         slot: {
             time: 6,
-            recommend: 12,
+            recommend: -50,
             lang: "cn",
             ui: "mdui",
             device: "desktop"
@@ -91,7 +91,7 @@ var links = [
         github: null,
         slot: {
             time: 7,
-            recommend: -25,
+            recommend: -160,
             lang: "cn",
             ui: "no",
             device: "both"
@@ -105,7 +105,7 @@ var links = [
         github: null,
         slot: {
             time: 8,
-            recommend: -30,
+            recommend: -90,
             lang: "en",
             ui: "no",
             device: "both"
@@ -119,7 +119,7 @@ var links = [
         github: "https://github.com/for-the-zero/Taple",
         slot: {
             time: 9,
-            recommend: 100,
+            recommend: 980,
             lang: "en",
             ui: "css",
             device: "both"
@@ -133,7 +133,7 @@ var links = [
         github: null,
         slot: {
             time: 10,
-            recommend: 20,
+            recommend: 540,
             lang: "cn",
             ui: "material-web",
             device: "both"
@@ -147,7 +147,7 @@ var links = [
         github: "https://github.com/for-the-zero/UpDyn",
         slot: {
             time: 11,
-            recommend: 30,
+            recommend: 380,
             lang: "cn",
             ui: "mdui",
             device: "both"
@@ -162,7 +162,7 @@ var links = [
         github: null,
         slot: {
             time: 12,
-            recommend: 32,
+            recommend: 300,
             lang: "cn",
             ui: "mdui",
             device: "both"
@@ -176,7 +176,7 @@ var links = [
         github: null,
         slot: {
             time: 13,
-            recommend: 6,
+            recommend: -280,
             lang: "en",
             ui: "mdui",
             device: "both"
@@ -190,7 +190,7 @@ var links = [
         github: 'https://gist.github.com/for-the-zero/82cbed1e541a44ca84c46b34da1cc67d',
         slot: {
             time: 13.5,
-            recommend: 40,
+            recommend: 420,
             lang: "cn",
             ui: "css",
             device: "both"
@@ -204,7 +204,7 @@ var links = [
         github: null,
         slot: {
             time: 14,
-            recommend: 8,
+            recommend: 0,
             lang: "cn",
             ui: "css",
             device: "desktop"
@@ -218,7 +218,7 @@ var links = [
         github: null,
         slot: {
             time: 16,
-            recommend: 50,
+            recommend: 820,
             lang: "cn",
             ui: "css",
             device: "desktop"
@@ -232,7 +232,7 @@ var links = [
         github: 'https://github.com/for-the-zero/FakeNET',
         slot: {
             time: 17,
-            recommend: 70,
+            recommend: 560,
             lang: "both",
             ui: "rv",
             device: "both"
@@ -246,7 +246,7 @@ var links = [
         github: null,
         slot: {
             time: 18,
-            recommend: -20,
+            recommend: 400,
             lang: "en",
             ui: "css",
             device: "both"
@@ -260,7 +260,7 @@ var links = [
         github: null,
         slot: {
             time: 19,
-            recommend: 55,
+            recommend: 480,
             lang: "cn",
             ui: "css",
             device: "both"
@@ -274,7 +274,7 @@ var links = [
         github: null,
         slot: {
             time: 20,
-            recommend: 45,
+            recommend: 580,
             lang: "cn",
             ui: "css",
             device: "desktop"
@@ -288,7 +288,7 @@ var links = [
         github: 'https://github.com/for-the-zero/QzReader',
         slot: {
             time: 21,
-            recommend: 28,
+            recommend: 440,
             lang: "cn",
             ui: "rv",
             device: "desktop"
@@ -302,7 +302,7 @@ var links = [
         github: 'https://github.com/for-the-zero/kaomera',
         slot: {
             time: 22,
-            recommend: 42,
+            recommend: 700,
             lang: "cn",
             ui: "rv",
             device: "both"
@@ -316,7 +316,7 @@ var links = [
         github: null,
         slot: {
             time: 23,
-            recommend: 43,
+            recommend: 740,
             lang: "cn",
             ui: "css",
             device: "both"
@@ -330,7 +330,7 @@ var links = [
         github: 'https://github.com/for-the-zero/practice.zip/tree/main/web/Selinkt',
         slot: {
             time: 24,
-            recommend: 43,
+            recommend: 620,
             lang: "en",
             ui: "rv",
             device: "both"
@@ -344,7 +344,7 @@ var links = [
         github: null,
         slot: {
             time: 25,
-            recommend: 29,
+            recommend: 280,
             lang: "cn",
             ui: "css",
             device: "both"
@@ -358,7 +358,7 @@ var links = [
         github: null,
         slot: {
             time: 26,
-            recommend: 43,
+            recommend: 660,
             lang: "en",
             ui: "mdui",
             device: "both"
@@ -372,7 +372,7 @@ var links = [
         github: 'https://github.com/for-the-zero/Oheya',
         slot: {
             time: 27,
-            recommend: 47,
+            recommend: 900,
             lang: "both",
             ui: "rv",
             device: "both"
