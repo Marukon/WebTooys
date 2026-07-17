@@ -377,7 +377,21 @@ var links = [
             ui: "rv",
             device: "both"
         }
-    }
+    },
+    {
+        name: "LocalStorage Manager",
+        icon: "storage--outlined",
+        desc: "Manage localStorage of this site",
+        url: "./vibe/localstoragemanager/index.html",
+        github: null,
+        slot: {
+            time: 28,
+            recommend: 290,
+            lang: "en",
+            ui: "css",
+            device: "both"
+        }
+    },
 ];
 
 const cate_order = {

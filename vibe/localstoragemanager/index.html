@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalStorage Manager</title>
+    <meta name="description" content="Manage, edit, search, import and export localStorage data with a built-in JSON editor. A pure frontend dev tool.">
+    <meta name="keywords" content="LocalStorage,JSON editor,data management,browser storage,developer tool">
+    <link rel="preconnect" href="https://cdn.jsdmirror.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdmirror.com/npm/jsoneditor@9/dist/jsoneditor.min.css">
+    <link rel="stylesheet" href="./index.css">
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="8a96c320-b541-482f-acd4-6fc1b3ec22dc"></script>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://t.ftz.is-a.dev/vibe/localstoragemanager/index.html">
+    <meta property="og:title" content="LocalStorage Manager">
+    <meta property="og:description" content="Manage, edit, search, import and export localStorage data with a built-in JSON editor.">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://t.ftz.is-a.dev/vibe/localstoragemanager/index.html">
+    <script type="module" async defer src="../../wtball.js"></script>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>LocalStorage Manager</h1>
+            <p class="subtitle">Manage localStorage data for this site</p>
+        </header>
+
+        <section class="toolbar">
+            <div class="toolbar-row primary-row">
+                <button id="btn-add" class="btn primary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    New
+                </button>
+                <button id="btn-export" class="btn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Export
+                </button>
+                <button id="btn-import" class="btn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                    Import
+                </button>
+                <input type="file" id="file-input" accept=".json" hidden>
+                <span class="spacer"></span>
+                <button id="btn-clear" class="btn danger">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                    Clear
+                </button>
+            </div>
+            <div class="toolbar-row search-row">
+                <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                <input type="text" id="search-input" placeholder="Search keys..." class="search-box" spellcheck="false">
+                <span class="stats" id="stats">0 items</span>
+            </div>
+        </section>
+
+        <section class="table-wrap">
+            <table id="data-table">
+                <thead>
+                    <tr>
+                        <th class="col-key">Key</th>
+                        <th class="col-val">Value</th>
+                        <th class="col-size">Size</th>
+                        <th class="col-actions">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body"></tbody>
+            </table>
+        </section>
+    </div>
+
+    <div class="editor-overlay hidden" id="editor-overlay">
+        <div class="editor-panel">
+            <div class="editor-header">
+                <h2 id="editor-title">New Entry</h2>
+                <div class="editor-header-actions">
+                    <span class="editor-mode-badge" id="editor-mode-badge">JSON</span>
+                    <button class="btn btn-sm" id="editor-format">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10H3"/><path d="M21 6H3"/><path d="M21 14H3"/><path d="M21 18H3"/></svg>
+                        Format
+                    </button>
+                    <button class="btn btn-sm" id="editor-close" title="Close (Esc)">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    </button>
+                </div>
+            </div>
+            <div class="editor-body">
+                <div class="editor-key-row">
+                    <label>Key</label>
+                    <input type="text" id="editor-key" placeholder="Enter key name" spellcheck="false">
+                </div>
+                <div class="editor-json-wrap">
+                    <label>Value</label>
+                    <div id="jsoneditor-container"></div>
+                </div>
+            </div>
+            <div class="editor-footer">
+                <span class="editor-hint"><kbd>Ctrl+Enter</kbd> Save &middot; <kbd>Esc</kbd> Cancel</span>
+                <div class="editor-footer-actions">
+                    <button class="btn" id="editor-cancel">Cancel</button>
+                    <button class="btn primary" id="editor-save">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdmirror.com/npm/jsoneditor@9/dist/jsoneditor.min.js"></script>
+    <script src="./index.js"></script>
+</body>
+</html>
