@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xxxPad | 在线打击垫，自定义音频</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdmirror.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&display=swap">  
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdn.jsdmirror.com/npm/mdui/mdui.css">
+    <script src="https://cdn.jsdmirror.com/npm/mdui/mdui.global.js"></script>
+    <!--icons-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <!-- SEO -->
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="8a96c320-b541-482f-acd4-6fc1b3ec22dc"></script>
+    <meta name="description" content="轻量在线音频打击垫，自定义音频，点击播放">
+    <meta name="keywords" content="打击垫,音频,播放">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://t.ftz.is-a.dev/proj/xxxpad">
+    <meta property="og:title" content="xxxPad | 在线打击垫，自定义音频">
+    <meta property="og:description" content="轻量在线音频打击垫，自定义音频，点击播放">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://t.ftz.is-a.dev/proj/xxxpad">
+    <script type="module" async defer src="../../wtball.js"></script>
+</head>
+<body>
+    <mdui-top-app-bar scroll-behavior="elevate">
+        <mdui-button-icon icon="settings"></mdui-button-icon>
+        <mdui-top-app-bar-title>xxxPad</mdui-top-app-bar-title>
+        <div style="flex-grow: 1"></div>
+        <mdui-switch unchecked-icon="play_arrow" checked-icon="edit"></mdui-switch>
+    </mdui-top-app-bar>
+
+    <div class="pad">
+    </div>
+
+    <mdui-dialog class="settings" close-on-overlay-click close-on-esc headline="更改行列">
+        <div>
+            <del>X X XXX</del>
+            <mdui-text-field variant="outlined" label="行"></mdui-text-field>
+            <mdui-text-field variant="outlined" label="列"></mdui-text-field>
+            <mdui-button>确定</mdui-button>
+        </div>
+    </mdui-dialog>
+
+    <mdui-dialog class="editing" close-on-overlay-click close-on-esc headline="编辑">
+        <div>
+            <mdui-text-field variant="outlined" label="文本"></mdui-text-field>
+            <mdui-radio-group value="ori">
+                <mdui-radio value="url">URL导入</mdui-radio>
+                <mdui-radio value="file">文件导入</mdui-radio>
+                <mdui-radio value="none">空白</mdui-radio>
+                <mdui-radio value="ori">保留不变</mdui-radio>
+            </mdui-radio-group>
+            <mdui-text-field variant="outlined" label="URL"></mdui-text-field>
+            <mdui-button variant="tonal">选择或拖动文件</mdui-button>
+            <div class="switch-box">
+                <mdui-switch></mdui-switch>
+                <div>是否启用</div>
+            </div>
+            <mdui-button>确定</mdui-button>
+        </div>
+    </mdui-dialog>
+
+    <script src="https://unpkg.com/jquery/dist/jquery.min.js"></script>
+    <script src="./index.js"></script>
+</body>
+</html>

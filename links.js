@@ -392,6 +392,20 @@ var links = [
             device: "both"
         }
     },
+    {
+        name: "打击垫模拟器",
+        icon: "view_module--outlined",
+        desc: "X X XXX",
+        url: "./proj/xxxpad/index.html",
+        github: null,
+        slot: {
+            time: 29,
+            recommend: 550,
+            lang: "cn",
+            ui: "mdui",
+            device: "both"
+        }
+    },
 ];
 
 const cate_order = {

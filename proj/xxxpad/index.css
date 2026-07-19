@@ -1,0 +1,62 @@
+body{
+    font-family: 'Google Sans','Noto Sans SC';
+    background-color: var(--mdui-color-background);
+    color: var(--mdui-color-on-background);
+    height: 100vh;
+    padding: 20px;
+    margin: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+.pad{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 5px;
+}
+/* .pad > mdui-button{
+    height: 100%;
+    border-radius: var(--mdui-shape-corner-medium);
+} */
+
+mdui-dialog > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    margin-top: 10px;
+}
+.switch-box{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.pad-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    background-color: var(--mdui-color-surface);
+    border-radius: var(--mdui-shape-corner-medium);
+    height: 100%;
+    border: 1px solid var(--mdui-color-on-surface);
+    font-size: var(--mdui-typescale-label-large-size);
+    font-weight: var(--mdui-typescale-label-large-weight);
+    color: rgb(var(--mdui-color-on-primary, 255, 255, 255));
+    background-color: rgb(var(--mdui-color-primary, 103, 80, 164));
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+.pad-item.disabled {
+    color: rgba(var(--mdui-color-on-surface, 29, 27, 32), 0.38);
+    background-color: rgba(var(--mdui-color-on-surface, 29, 27, 32), 0.12);
+    border-color: rgba(var(--mdui-color-on-surface, 29, 27, 32), 0.12);
+    cursor: default;
+}
