@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruby Creator - 快速创建HTML Ruby标签</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://google.fonts.ihwx.cn/css2?family=Google+Sans&display=swap"> <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans&display=swap"> -->
+    <link rel="stylesheet" href="https://google.fonts.ihwx.cn/css2?family=Noto+Sans&display=swap"> <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&display=swap">  -->
+    <link href="https://google.fonts.ihwx.cn/icon?family=Material+Symbols" rel="stylesheet"> <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Symbols" rel="stylesheet"> -->
+    <link href="https://google.fonts.ihwx.cn/icon?family=Material+Symbols+Outlined" rel="stylesheet"> <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet"> -->
+    <!-- SEO -->
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="8a96c320-b541-482f-acd4-6fc1b3ec22dc"></script>
+    <meta name="description" content="输入文字和注音/注解，快速转换为含有ruby标签的html代码">
+    <meta name="keywords" content="ruby,注音,注解,html,创建,快速,生成">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://t.ftz.is-a.dev/proj/ruby/index.html">
+    <meta property="og:title" content="Ruby Creator - 快速创建HTML Ruby标签">
+    <meta property="og:description" content="输入文字和注音/注解，快速转换为含有ruby标签的html代码">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://t.ftz.is-a.dev/proj/ruby/index.html">
+    <script type="module" async defer src="../../wtball.js"></script>
+</head>
+<body>
+    <m3e-theme color="#E0115F" variant="expressive" motion="expressive">
+        <m3e-nav-bar mode="auto">
+            <m3e-nav-item selected><m3e-icon slot="icon" name="bolt"></m3e-icon>快速创建</m3e-nav-item>
+            <m3e-nav-item><m3e-icon slot="icon" name="edit_note"></m3e-icon>快速编写</m3e-nav-item>
+            <m3e-nav-item><m3e-icon slot="icon" name="swap_horiz"></m3e-icon>转换器</m3e-nav-item>
+        </m3e-nav-bar>
+        
+        <div class="content quick active">
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <h2>快速创建HTML Ruby标签</h2>
+                <m3e-form-field style="--md-sys-density-scale: -3;">
+                    <label slot="label">注音/注释</label>
+                    <input type="text" />
+                </m3e-form-field>
+                <m3e-form-field>
+                    <label slot="label">文本</label>
+                    <input type="text" />
+                </m3e-form-field>
+                <m3e-split-button>
+                    <m3e-button slot="leading-button" variant="filled">
+                        <m3e-icon slot="icon" name="content_cut"></m3e-icon>复制并清空
+                    </m3e-button>
+                    <m3e-icon-button slot="trailing-button">
+                        <m3e-icon name="keyboard_arrow_down"></m3e-icon>
+                        <m3e-menu-trigger for="quick-actions"></m3e-menu-trigger>
+                    </m3e-icon-button>
+                </m3e-split-button>
+                <m3e-menu id="quick-actions" position-x="before">
+                    <m3e-menu-item><m3e-icon slot="icon" name="content_copy"></m3e-icon>仅复制</m3e-menu-item>
+                    <m3e-menu-item><m3e-icon slot="icon" name="delete"></m3e-icon>清空</m3e-menu-item>
+                </m3e-menu>
+            </div>
+            <m3e-divider></m3e-divider>
+            <h3>预览和代码</h3>
+            <div class="quick-preview-code">
+                <m3e-card>
+                    <div class="quick-preview" style="padding: 1rem;"></div>
+                </m3e-card>
+                <m3e-form-field variant="filled">
+                    <label slot="label" for="quick-code">代码</label>
+                    <textarea id="quick-code"></textarea>
+                </m3e-form-field>
+                <m3e-textarea-autosize for="quick-code" disabled></m3e-textarea-autosize>
+            </div>
+        </div>
+
+        <div class="content write">
+            <m3e-form-field hide-subscript="always" style="flex: 1; width: 100%">
+                <label slot="label">输入注音/注释</label>
+                <input type="text" />
+            </m3e-form-field>
+            <div class="write-replace-ctrl">
+                <m3e-switch id="write-mode"></m3e-switch>
+                <m3e-tooltip for="write-mode">开启后可以选中文本并为文本添加注音/注释</m3e-tooltip>
+                <m3e-button variant="filled"><m3e-icon name="add" slot="icon"></m3e-icon>添加</m3e-button>
+            </div>
+            <m3e-card>
+                <div contenteditable></div>
+            </m3e-card>
+        </div>
+
+        <div class="content convert">
+            <div class="convert-bar" style="flex-direction: column;">
+                <m3e-form-field hide-subscript="always" style="flex: 1; width: 100%">
+                    <label slot="label" for="convert-modes">模式</label>
+                    <m3e-select id="convert-modes" value="2r-1">
+                        <m3e-optgroup>
+                            <span slot="label">转换为ruby标签</span>
+                            <m3e-option value="2r-1" selected>由[文本](注)格式转换</m3e-option>
+                            <m3e-option value="2r-2">由{文本}(注)格式转换</m3e-option>
+                            <m3e-option value="2r-3">由[文本^注]格式转换</m3e-option>
+                            <m3e-option value="2r-4">由{文本^注}格式转换</m3e-option>
+                            <m3e-option value="2r-5">由[文本|注]格式转换</m3e-option>
+                            <m3e-option value="2r-6">由{文本|注}格式转换</m3e-option>
+                        </m3e-optgroup>
+                        <m3e-optgroup>
+                            <span slot="label">转换为普通文本</span>
+                            <m3e-option value="r2-1">转换为[文本](注)格式</m3e-option>
+                            <m3e-option value="r2-2">转换为{文本}(注)格式</m3e-option>
+                            <m3e-option value="r2-3">转换为[文本^注]格式</m3e-option>
+                            <m3e-option value="r2-4">转换为{文本^注}格式</m3e-option>
+                            <m3e-option value="r2-5">转换为[文本|注]格式</m3e-option>
+                            <m3e-option value="r2-6">转换为{文本|注}格式</m3e-option>
+                        </m3e-optgroup>
+                    </m3e-select>
+                </m3e-form-field>
+                <m3e-split-button>
+                    <m3e-button variant="filled" slot="leading-button"><m3e-icon slot="icon" name="swap_horiz"></m3e-icon>转换</m3e-button>
+                    <m3e-icon-button slot="trailing-button" variant="outlined"><m3e-icon name="content_copy"></m3e-icon></m3e-icon-button>
+                </m3e-split-button>
+            </div>
+            <m3e-form-field hide-subscript="always" style="width: 100%;" variant="filled">
+                <textarea id="convert-area"></textarea>
+            </m3e-form-field>
+            <m3e-textarea-autosize for="convert-area"></m3e-textarea-autosize>
+        </div>
+
+    </m3e-theme>
+    <script type="module" src="https://cdn.jsdmirror.com/npm/@m3e/web/dist/all.min.js"></script>
+    <script src="https://cdn.jsdmirror.com/npm/jquery"></script>
+    <script src="index.js"></script>
+</body>
+</html>
