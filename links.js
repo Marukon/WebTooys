@@ -9,7 +9,7 @@ var links = [
             time: 1,
             recommend: -30,
             lang: "en",
-            ui: "css",
+            ai: "no",
             device: "both"
         }
     },
@@ -22,8 +22,8 @@ var links = [
         slot: {
             time: 2,
             recommend: -70,
-            lang: "cn",
-            ui: "material-web",
+            lang: "zh",
+            ai: "no",
             device: "both"
         }
     },
@@ -36,8 +36,8 @@ var links = [
         slot: {
             time: 3,
             recommend: 340,
-            lang: "cn",
-            ui: "mdui",
+            lang: "zh",
+            ai: "no",
             device: "both"
         }
     },
@@ -50,8 +50,8 @@ var links = [
         slot: {
             time: 4,
             recommend: -420,
-            lang: "cn",
-            ui: "no",
+            lang: "zh",
+            ai: "no",
             device: "mobile"
         }
     },
@@ -64,8 +64,8 @@ var links = [
         slot: {
             time: 5,
             recommend: 50,
-            lang: "cn",
-            ui: "mdui",
+            lang: "zh",
+            ai: "no",
             device: "both"
         }
     },
@@ -78,8 +78,8 @@ var links = [
         slot: {
             time: 6,
             recommend: -50,
-            lang: "cn",
-            ui: "mdui",
+            lang: "zh",
+            ai: "no",
             device: "desktop"
         }
     },
@@ -92,8 +92,8 @@ var links = [
         slot: {
             time: 7,
             recommend: -160,
-            lang: "cn",
-            ui: "no",
+            lang: "zh",
+            ai: "no",
             device: "both"
         }
     },
@@ -107,7 +107,7 @@ var links = [
             time: 8,
             recommend: -90,
             lang: "en",
-            ui: "no",
+            ai: "no",
             device: "both"
         }
     },
@@ -121,7 +121,7 @@ var links = [
             time: 9,
             recommend: 980,
             lang: "en",
-            ui: "css",
+            ai: "enhance",
             device: "both"
         }
     },
@@ -134,8 +134,8 @@ var links = [
         slot: {
             time: 10,
             recommend: 540,
-            lang: "cn",
-            ui: "material-web",
+            lang: "zh",
+            ai: "no",
             device: "both"
         }
     },
@@ -148,8 +148,8 @@ var links = [
         slot: {
             time: 11,
             recommend: 380,
-            lang: "cn",
-            ui: "mdui",
+            lang: "zh",
+            ai: "no",
             device: "both"
         }
     },
@@ -163,8 +163,8 @@ var links = [
         slot: {
             time: 12,
             recommend: 300,
-            lang: "cn",
-            ui: "mdui",
+            lang: "zh",
+            ai: "no",
             device: "both"
         }
     },
@@ -178,7 +178,7 @@ var links = [
             time: 13,
             recommend: -280,
             lang: "en",
-            ui: "mdui",
+            ai: "enhance",
             device: "both"
         }
     },
@@ -191,8 +191,8 @@ var links = [
         slot: {
             time: 13.5,
             recommend: 420,
-            lang: "cn",
-            ui: "css",
+            lang: "zh",
+            ai: "no",
             device: "both"
         }
     },
@@ -205,8 +205,8 @@ var links = [
         slot: {
             time: 14,
             recommend: 0,
-            lang: "cn",
-            ui: "css",
+            lang: "zh",
+            ai: "based",
             device: "desktop"
         }
     },
@@ -219,8 +219,8 @@ var links = [
         slot: {
             time: 16,
             recommend: 820,
-            lang: "cn",
-            ui: "css",
+            lang: "zh",
+            ai: "no",
             device: "desktop"
         }
     },
@@ -234,7 +234,7 @@ var links = [
             time: 17,
             recommend: 560,
             lang: "both",
-            ui: "rv",
+            ai: "based",
             device: "both"
         }
     },
@@ -248,7 +248,7 @@ var links = [
             time: 18,
             recommend: 400,
             lang: "en",
-            ui: "css",
+            ai: "no",
             device: "both"
         }
     },
@@ -261,8 +261,8 @@ var links = [
         slot: {
             time: 19,
             recommend: 480,
-            lang: "cn",
-            ui: "css",
+            lang: "zh",
+            ai: "no",
             device: "both"
         }
     },
@@ -275,8 +275,8 @@ var links = [
         slot: {
             time: 20,
             recommend: 580,
-            lang: "cn",
-            ui: "css",
+            lang: "zh",
+            ai: "no",
             device: "desktop"
         }
     },
@@ -289,8 +289,8 @@ var links = [
         slot: {
             time: 21,
             recommend: 440,
-            lang: "cn",
-            ui: "rv",
+            lang: "zh",
+            ai: "no",
             device: "desktop"
         }
     },
@@ -303,8 +303,8 @@ var links = [
         slot: {
             time: 22,
             recommend: 700,
-            lang: "cn",
-            ui: "rv",
+            lang: "zh",
+            ai: "based",
             device: "both"
         }
     },
@@ -317,8 +317,8 @@ var links = [
         slot: {
             time: 23,
             recommend: 740,
-            lang: "cn",
-            ui: "css",
+            lang: "zh",
+            ai: "no",
             device: "both"
         }
     },
@@ -332,7 +332,7 @@ var links = [
             time: 24,
             recommend: 620,
             lang: "en",
-            ui: "rv",
+            ai: "no",
             device: "both"
         }
     },
@@ -345,8 +345,8 @@ var links = [
         slot: {
             time: 25,
             recommend: 280,
-            lang: "cn",
-            ui: "css",
+            lang: "zh",
+            ai: "no",
             device: "both"
         }
     },
@@ -360,7 +360,7 @@ var links = [
             time: 26,
             recommend: 660,
             lang: "en",
-            ui: "mdui",
+            ai: "based",
             device: "both"
         }
     },
@@ -374,7 +374,7 @@ var links = [
             time: 27,
             recommend: 900,
             lang: "both",
-            ui: "rv",
+            ai: "based",
             device: "both"
         }
     },
@@ -388,7 +388,7 @@ var links = [
             time: 28,
             recommend: 290,
             lang: "en",
-            ui: "css",
+            ai: "no",
             device: "both"
         }
     },
@@ -401,25 +401,37 @@ var links = [
         slot: {
             time: 29,
             recommend: 550,
-            lang: "cn",
-            ui: "mdui",
+            lang: "zh",
+            ai: "no",
+            device: "both"
+        }
+    },
+    {
+        name: "ruby标签创建器",
+        icon: "insert_comment--outlined",
+        desc: "快速生成html ruby标签",
+        url: "./proj/ruby/index.html",
+        github: null,
+        slot: {
+            time: 30,
+            recommend: 555,
+            lang: "zh",
+            ai: "no",
             device: "both"
         }
     },
 ];
 
 const cate_order = {
-    lang: [['both','可切换 / Switchable'],['cn','中文'],['en','English']],
-    ui: [
-        ['mdui','mdui'],
-        ['css','CSS Style'],
-        ['material-web','material-web'],
-        ['rv', 'React || Vue || ...'],
-        ['no','无样式/No Style'],
+    lang: [['both','可切换 / Switchable'],['zh','中文'],['en','English']],
+    ai: [
+        ['based', "基于调用LLM的 / Based on LLM"],
+        ['enhance', "作为增强功能 / As an Enhancement Function"],
+        ['no', "无 / No"],
     ],
     device: [
-        ['both','两者都适用/Both'],
-        ['desktop','桌面/desktop'],
-        ['mobile','移动/mobile']
+        ['both','两者都适用 / Both'],
+        ['desktop','桌面 / desktop'],
+        ['mobile','移动 / mobile']
     ]
 };
