@@ -54,9 +54,9 @@ $q_text.on('input',()=>{
     update_preview();
 });
 
-const $w_mode = $('#write-mode');
-const $w_rt = $('.write-replace-ctrl > m3e-form-field > input');
-const $w_btn = $('.write-replace-ctrl > m3e-button');
+const $w_mode = $('.write-replace-ctrl > m3e-button:nth-child(1)');
+const $w_rt = $('.content.write > m3e-form-field > input');
+const $w_btn = $('.write-replace-ctrl > m3e-button:nth-child(2)');
 const $w_editor = $('.write > m3e-card > div');
 let savedRange = null, constraining = false;
 function closestSpan(node){
@@ -97,7 +97,7 @@ function serializeEditor(node){
     return out;
 };
 $w_mode.on('change',()=>{
-    const checked = $w_mode.prop('checked');
+    const checked = $w_mode.prop('selected');
     savedRange = null;
     window.getSelection().removeAllRanges();
     if(checked){
@@ -120,7 +120,7 @@ $w_mode.on('change',()=>{
 });
 document.addEventListener('selectionchange',()=>{
     if(constraining) return;
-    if(!$w_mode.prop('checked')) return;
+    if(!$w_mode.prop('selected')) return;
     const sel = window.getSelection();
     if(!sel.rangeCount || sel.isCollapsed) return;
     const range = sel.getRangeAt(0);
@@ -144,7 +144,7 @@ document.addEventListener('selectionchange',()=>{
     constraining = false;
 });
 $w_editor.on('mouseup',()=>{
-    if(!$w_mode.prop('checked')) return;
+    if(!$w_mode.prop('selected')) return;
     const sel = window.getSelection();
     if(!sel.rangeCount) return;
     const range = sel.getRangeAt(0);
@@ -155,14 +155,14 @@ $w_editor.on('mouseup',()=>{
     if($w_rt.val().trim() !== '') $w_btn.prop('disabled',false);
 });
 $w_rt.on('input',()=>{
-    if($w_mode.prop('checked') && savedRange && $w_rt.val().trim() !== '') $w_btn.prop('disabled',false);
+    if($w_mode.prop('selected') && savedRange && $w_rt.val().trim() !== '') $w_btn.prop('disabled',false);
     else $w_btn.prop('disabled',true);
 });
 $w_rt.on('keydown',e=>{
     if(e.key === 'Enter' && !$w_btn.prop('disabled')) $w_btn.trigger('click');
 });
 $w_btn.on('click',()=>{
-    if(!$w_mode.prop('checked') || !savedRange) return;
+    if(!$w_mode.prop('selected') || !savedRange) return;
     const selectedText = savedRange.toString();
     const rtText = $w_rt.val();
     if(!selectedText || !rtText.trim()) return;
