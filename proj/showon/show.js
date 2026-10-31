@@ -90,9 +90,11 @@ window.addEventListener('resize',function(){
 
 window.addEventListener('message', function(e){
     let data = e.data;
+    if(!data || typeof data !== 'object') return;
+    if(typeof data.text !== 'string' || (data.mode !== 'full' && data.mode !== 'scroll')) return;
     text = data.text;
-    fontc = data.fontc;
-    bgc = data.bgc;
+    if(/^#[0-9a-f]{3,8}$/i.test(data.fontc)) fontc = data.fontc;
+    if(/^#[0-9a-f]{3,8}$/i.test(data.bgc)) bgc = data.bgc;
     mode = data.mode;
     if(mode == 'scroll'){
         text = text.replace(/\n/g, '     ');

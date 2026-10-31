@@ -1,0 +1,9 @@
+{
+    "html.customData": [
+        "https://cdn.jsdmirror.com/npm/@m3e/web/dist/html-custom-data.json"
+    ],
+    "css.customData": [
+        "https://cdn.jsdmirror.com/npm/@m3e/web/dist/css-custom-data.json"
+    ],
+    "cem-lsp.customElementsManifest": "https://cdn.jsdmirror.com/npm/@m3e/web/dist/custom-elements.json"
+}

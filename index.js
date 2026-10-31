@@ -1,9 +1,9 @@
 //elements
-const e_tooltip = $('mdui-tooltip[content="没有东西的，就一个摆设"]');
+const e_tooltip = $('m3e-tooltip[for="menu-btn"]');
 const e_sort = $('.sort');
 const e_cate = $('.category');
 const e_toollist = $('.tools');
-const e_rand = $('mdui-button-icon[icon="shuffle"]');
+const e_rand = $('#rand-btn');
 
 //egg
 var clk = 0;
@@ -20,7 +20,7 @@ var eggs = {
     55: '你就点吧，懒得告诉你点了多少下，你自己数去',
     95: '加油哦，就快到了，放慢点吧',
     100: '不是你真的这么无聊',
-    101: '既然这样',
+    101: '既然如此',
     102: '我喜欢你',
     103: '≧ ﹏ ≦',
     104: '100下是不是太少了（）',
@@ -39,34 +39,38 @@ var eggs = {
     33550337: '再次踏上轮回……',
 
 };
-e_tooltip.on('click',function(){
+const e_menu = $('#menu-btn');
+e_menu.on('click',function(){
     clk++;
     if(eggs[clk]){
-        $(this).attr('content',eggs[clk]);
+        e_tooltip.text(eggs[clk]);
     };
 });
 //random
 e_rand.on('hover mouseenter touchstart mouseup',()=>{
-    e_rand.attr('href', links[Math.floor(Math.random() * links.length)].url)
+    e_rand.attr('href', links[Math.floor(Math.random() * links.length)].url);
 });
 
 //trigger
 e_sort.on('change',function(){
-    if(e_sort.val() === ''){
-        e_sort.val('recommend');
+    if(e_sort[0].value === ''){
+        e_sort[0].value = 'recommend';
     };
-    show_tools(links, e_sort.val(), e_cate.val());
+    show_tools(links, e_sort[0].value, e_cate[0].value);
 });
 e_cate.on('change',function(){
-    if(e_cate.val() === ''){
-        e_cate.val('no');
+    if(e_cate[0].value === ''){
+        e_cate[0].value = 'no';
     };
-    show_tools(links, e_sort.val(), e_cate.val());
+    show_tools(links, e_sort[0].value, e_cate[0].value);
 });
-show_tools(links, e_sort.val(), e_cate.val());
+show_tools(links, e_sort[0].value, e_cate[0].value);
 print_rcm();
 
 function show_tools(list, sort, cate) {
+    if (!cate || !cate_order[cate]) {
+        cate = 'no';
+    }
     // prepare
     const categorized = {};
     if (cate === 'no') {
@@ -94,12 +98,14 @@ function show_tools(list, sort, cate) {
         for(let i=0;i<categorized.no.length;i++){
             let item = categorized.no[i];
             let card = $(`
-                <mdui-card clickable href="${item.url}">
-                    <mdui-icon name="${item.icon}" class="item-icon"></mdui-icon>
-                    <h1>${item.name}</h1>
-                    <p>${item.desc}</p>
-                    ${item.github ? `<mdui-chip href="${item.github}" icon="code" target="_blank">Source</mdui-chip>` : ''}
-                </mdui-card>`);
+                <m3e-card actionable href="${item.url}">
+                    <div>
+                        <m3e-icon name="${item.icon.replace('--outlined','')}" variant="outlined" class="item-icon"></m3e-icon>
+                        <h1>${item.name}</h1>
+                        <p>${item.desc}</p>
+                        ${item.github ? `<m3e-assist-chip href="${item.github}" target="_blank">Source</m3e-assist-chip>` : ''}
+                    </div>
+                </m3e-card>`);
             e_toollist.append(card);
         };
     } else {
@@ -109,18 +115,20 @@ function show_tools(list, sort, cate) {
             let name = cate_list[i][1];
             let items = categorized[key];
             if(items){
-                let group = $(`<mdui-collapse-item value="item-${i}">
-                    <mdui-list-item slot="header" icon="folder--outlined">${name}</mdui-list-item>
-                </mdui-collapse-item>`);
+                let group = $(`<m3e-expansion-panel open>
+                    <span slot="header">${name}</span>
+                </m3e-expansion-panel>`);
                 for(let j=0;j<items.length;j++){
                     let item = items[j];
                     let card = $(`
-                        <mdui-card clickable href="${item.url}">
-                            <mdui-icon name="${item.icon}" class="item-icon"></mdui-icon>
-                            <h1>${item.name}</h1>
-                            <p>${item.desc}</p>
-                            ${item.github ? `<mdui-chip href="${item.github}" icon="code" target="_blank">Github</mdui-chip>` : ''}
-                        </mdui-card>`);
+                        <m3e-card actionable href="${item.url}">
+                            <div>
+                                <m3e-icon name="${item.icon.replace('--outlined','')}" variant="outlined" class="item-icon"></m3e-icon>
+                                <h1>${item.name}</h1>
+                                <p>${item.desc}</p>
+                                ${item.github ? `<m3e-assist-chip href="${item.github}" target="_blank">Github</m3e-assist-chip>` : ''}
+                            </div>
+                        </m3e-card>`);
                     group.append(card);
                 };
                 e_toollist.append(group);
