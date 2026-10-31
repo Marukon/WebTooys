@@ -6,23 +6,68 @@ body{
     align-items: flex-start;
     justify-content: center;
     overflow-x: hidden;
+    margin: 8px;
 }
-.mdui-menu-subh{
-    font-size: var(--mdui-typescale-label-small-size);
-    color: var(--mdui-color-on-surface-variant);
+m3e-app-bar{
+    display: block;
+    position: sticky;
+    top: 0;
+    width: 100vw;
+    margin-left: -8px;
+    margin-right: -8px;
+    z-index: 1000;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+.menu-subh{
+    font-size: 0.85rem;
+    color: #666;
     padding: 0 24px 0 16px;
+    line-height: 1.5;
 }
-mdui-card{
-    padding: 8px;
-    margin: 10px;
+m3e-card{
+    display: inline-block;
     width: 240px;
-    min-height: 240px;
+    height: 260px;
     vertical-align: top;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+m3e-card > div{
+    padding: 16px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+m3e-assist-chip{
+    align-self: start;
+    width: fit-content;
+}
+m3e-expansion-panel{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 8px;
+}
+m3e-expansion-panel m3e-card{
+    display: inline-block;
+    margin: 0 8px 8px 0;
+}
+.tools{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 @media screen and (max-width: 550px) {
-    mdui-card{
+    m3e-card{
         width: 150px;
-        min-height: 200px;
+        height: 220px;
     }
     .item-icon{
         font-size: 40px;
@@ -53,7 +98,7 @@ p{
     max-width: 100%;
     box-sizing: border-box;
 }
-mdui-circular-progress{
+m3e-loading-indicator{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -75,23 +120,29 @@ mdui-circular-progress{
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    /* max-width: 80%; */
     min-width: 200px;
     box-sizing: border-box;
     margin-top: 5px;
 }
-.sort-cate-item > mdui-select{
-    display: block;
+m3e-form-field{
+    display: inline-flex;
+    align-items: center;
+}
+.sort-cate-item m3e-select{
     margin-left: 10px;
     margin-right: 10px;
-    width: 100%;
+    width: 160px;
     max-width: 100%;
     box-sizing: border-box;
 }
-mdui-icon{
+m3e-icon{
     user-select: none;
 }
-mdui-divider{
+m3e-divider{
     margin-top: 10px;
     margin-bottom: 10px;
+}
+m3e-tooltip{
+    --md-tooltip-container-color: #333;
+    --md-tooltip-container-text-color: #fff;
 }

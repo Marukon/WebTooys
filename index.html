@@ -10,17 +10,13 @@
     <link rel="preconnect" href="https://cdn.jsdmirror.com" crossorigin>
     <!--link-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&display=swap">  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&display=swap">
     <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://cdn.jsdmirror.com/npm/mdui/mdui.css">
-    <script src="https://cdn.jsdmirror.com/npm/mdui/mdui.global.js"></script>
+    <script type="module" src="https://cdn.jsdmirror.com/npm/@m3e/web@2.10.3/dist/all.min.js"></script>
     <!--icons-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Two+Tone" rel="stylesheet">
-    
+    <link href="https://google.fonts.ihwx.cn/icon?family=Material+Symbols" rel="stylesheet">
+    <link href="https://google.fonts.ihwx.cn/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+
     <link rel="stylesheet" href="index.css">
     <link rel="icon" type="image/x-icon" href="favicon.svg">
 
@@ -36,84 +32,95 @@
     <meta property="og:title" content="WebTooys Quicktools - 免费在线小工具小玩具合集">
 </head>
 <body>
-    <mdui-top-app-bar scroll-behavior="elevate" scroll-target=".main">
-        <mdui-tooltip content="没有东西的，就一个摆设" placement="right"><mdui-button-icon icon="menu"></mdui-button-icon></mdui-tooltip>
-        <mdui-dropdown>
-            <mdui-top-app-bar-title slot="trigger">WebTooys Quicktools</mdui-top-app-bar-title>
-            <mdui-menu>
-                <mdui-menu-item href="https://t.ftz.is-a.dev/">Netlify + .is-a.dev</mdui-menu-item>
-                <mdui-menu-item href="https://t.ftz.cc.cd/">Vercel + .cc.cd</mdui-menu-item>
-                <mdui-menu-item href="https://tooys.pages.dev/">Cloudflare Pages</mdui-menu-item>
-                <mdui-menu-item href="https://tooys.netlify.app/">Netlify</mdui-menu-item>
-                <mdui-menu-item href="https://tooys.vercel.app/">Vercel</mdui-menu-item>
-                <mdui-menu-item href="https://tools.forthezero.dpdns.org/">Vercel + .dpdns.org</mdui-menu-item>
-            </mdui-menu>
-        </mdui-dropdown>
-        <div style="flex-grow: 1;"></div>
-        <mdui-tooltip content="随机 Random">
-            <mdui-button-icon icon="shuffle" target="_blank"></mdui-button-icon>
-        </mdui-tooltip>
-        <mdui-dropdown>
-            <mdui-button-icon icon="feed" slot="trigger"></mdui-button-icon>
-            <mdui-menu>
-                <p class="mdui-menu-subh">
-                    关于WebTooys的博客文章<br>
-                    主要是对里面的工具的介绍<br>
-                    选择一个博客链接进入：
-                </p>
-                <mdui-menu-item target="_blank" href="https://ftz.is-a.dev/blog/?tag=WebTooys&lang=zh-CN">Netlify + .is-a.dev</mdui-menu-item>
-                <mdui-menu-item target="_blank" href="https://ftz.cc.cd/blog/?tag=WebTooys&lang=zh-CN">Vercel + .cc.cd</mdui-menu-item>
-                <mdui-menu-item target="_blank" href="https://ftz.pages.dev/blog/?tag=WebTooys&lang=zh-CN">Cloudflare Pages</mdui-menu-item>
-                <mdui-menu-item>其他域名</mdui-menu-item>
-            </mdui-menu>
-        </mdui-dropdown>
-        <mdui-tooltip content="Github">
-            <mdui-button-icon icon="code" href="https://github.com/for-the-zero/quicktools" target="_blank"></mdui-button-icon>
-        </mdui-tooltip>
-    </mdui-top-app-bar>
+    <m3e-theme color="#59ffee">
+    <m3e-app-bar for="main">
+        <m3e-icon-button id="menu-btn" slot="leading">
+            <m3e-icon name="menu"></m3e-icon>
+        </m3e-icon-button>
 
-    <div class="main">
+        <m3e-icon-button slot="title" id="domain-btn">
+            <m3e-menu-trigger for="domain-menu">
+                <m3e-icon name="arrow_drop_down"></m3e-icon>
+                <span style="font-size:1.25rem;font-weight:500;letter-spacing:0.5px;vertical-align:middle;">WebTooys Quicktools</span>
+            </m3e-menu-trigger>
+        </m3e-icon-button>
+
+        <m3e-icon-button id="rand-btn" slot="trailing" target="_blank">
+            <m3e-icon name="shuffle"></m3e-icon>
+        </m3e-icon-button>
+
+        <m3e-icon-button id="feed-btn" slot="trailing">
+            <m3e-menu-trigger for="feed-menu">
+                <m3e-icon name="feed"></m3e-icon>
+            </m3e-menu-trigger>
+        </m3e-icon-button>
+
+        <m3e-icon-button id="github-btn" slot="trailing" href="https://github.com/for-the-zero/quicktools" target="_blank">
+            <m3e-icon name="code"></m3e-icon>
+        </m3e-icon-button>
+    </m3e-app-bar>
+
+    <m3e-tooltip for="menu-btn" position="above">没有东西的，就一个摆设</m3e-tooltip>
+    <m3e-tooltip for="rand-btn" position="above">随机 Random</m3e-tooltip>
+    <m3e-tooltip for="github-btn" position="above">Github</m3e-tooltip>
+
+    <m3e-menu id="domain-menu">
+        <m3e-menu-item href="https://t.ftz.is-a.dev/">Vercel + .is-a.dev</m3e-menu-item>
+        <m3e-menu-item href="https://t.ftz.cc.cd/">Netlify + .cc.cd</m3e-menu-item>
+        <m3e-menu-item href="https://tooys.pages.dev/">Cloudflare Pages</m3e-menu-item>
+        <m3e-menu-item href="https://tooys.netlify.app/">Netlify</m3e-menu-item>
+        <m3e-menu-item href="https://tooys.vercel.app/">Vercel</m3e-menu-item>
+    </m3e-menu>
+
+    <m3e-menu id="feed-menu">
+        <p class="menu-subh">
+            关于WebTooys的博客文章<br>
+            主要是对里面的工具的介绍<br>
+            选择一个博客链接进入：
+        </p>
+        <m3e-menu-item target="_blank" href="https://ftz.is-a.dev/blog/?tag=WebTooys&lang=zh-CN">Vercel + .is-a.dev</m3e-menu-item>
+        <m3e-menu-item target="_blank" href="https://ftz.cc.cd/blog/?tag=WebTooys&lang=zh-CN">Netlify + .cc.cd</m3e-menu-item>
+        <m3e-menu-item target="_blank" href="https://ftz.pages.dev/blog/?tag=WebTooys&lang=zh-CN">Cloudflare Pages</m3e-menu-item>
+        <m3e-menu-item>其他域名</m3e-menu-item>
+    </m3e-menu>
+
+    <div class="main" id="main">
 
         <p>这是一个简单小工具合集，会不断更新<br>
         This is a collection of tools, and I will keep updating
         </p>
         <div class="sort-cate">
             <div class="sort-cate-item">
-                <mdui-icon name="sort"></mdui-icon>
-                <mdui-select variant="outlined" value="recommend" class="sort" end-icon="keyboard_arrow_down">
-                    <mdui-menu-item value="recommend">推荐 / recommend</mdui-menu-item>
-                    <mdui-menu-item value="time">最新 / newest</mdui-menu-item>
-                </mdui-select>
+                <m3e-icon name="sort"></m3e-icon>
+                <m3e-form-field hide-subscript="always">
+                    <m3e-select class="sort" value="recommend">
+                        <m3e-option value="recommend">推荐 / recommend</m3e-option>
+                        <m3e-option value="time">最新 / newest</m3e-option>
+                    </m3e-select>
+                </m3e-form-field>
             </div>
             <div class="sort-cate-item">
-                <mdui-icon name="category--outlined"></mdui-icon>
-                <mdui-select variant="outlined" value="no" class="category" end-icon="keyboard_arrow_down">
-                    <mdui-menu-item value="no">不分类 / No category</mdui-menu-item>
-                    <mdui-menu-item value="lang">语言 / Languages</mdui-menu-item>
-                    <mdui-menu-item value="ai">AI功能 / AI Functions</mdui-menu-item>
-                    <mdui-menu-item value="device">设备 / Device</mdui-menu-item>
-                </mdui-select>
+                <m3e-icon name="category" variant="outlined"></m3e-icon>
+                <m3e-form-field hide-subscript="always">
+                    <m3e-select class="category" value="no">
+                        <m3e-option value="no">不分类 / No category</m3e-option>
+                        <m3e-option value="lang">语言 / Languages</m3e-option>
+                        <m3e-option value="ai">AI功能 / AI Functions</m3e-option>
+                        <m3e-option value="device">设备 / Device</m3e-option>
+                    </m3e-select>
+                </m3e-form-field>
             </div>
         </div>
-        <mdui-divider></mdui-divider>
+        <m3e-divider></m3e-divider>
 
-        <!--再见旧代码<mdui-card clickable href="https://forthezero.pythonanywhere.com/ab"><mdui-icon name="video_library--outlined"class="item-icon"></mdui-icon><h1>Alan Becker视频列表</h1><p>（站外）免_获取Alan Becker的YouTube视频列表（标题时间链接）</p></mdui-card><mdui-card clickable href="./todo/index.html"><mdui-icon name="task_alt--outlined"class="item-icon"></mdui-icon><h1>Todo</h1><p>模仿别人做的todo，左键标记右键删除，手机长按=右键</p></mdui-card><mdui-card clickable href="./zen/index.html"><mdui-icon name="timer--outlined"class="item-icon"></mdui-icon><h1>Zen</h1><p><del>带记录功能的计时器……</del>一个Material3风格的简约专注网页，可显示一言句子，可以对专注计时进行统计</p></mdui-card><mdui-card clickable href="./calendar/index.html"><mdui-icon name="date_range--outlined"class="item-icon"></mdui-icon><h1>简单日历</h1><p>简约的日历，就只由简单的日历功能</p></mdui-card><mdui-card clickable href="./playvib/1.html"><mdui-icon name="vibration--outlined"class="item-icon"></mdui-icon><h1>震动测试</h1><p>仅限带线性马达的手机，随便搞的，更新了2.0版本，但还是不如意……</p></mdui-card><mdui-card clickable href="./form/index.html"><mdui-icon name="question_answer--outlined"class="item-icon"></mdui-icon><h1>QpenForm</h1><p>此处仅限前端部分</p><mdui-chip href="https://github.com/for-the-zero/QpenForm"target="_blank">Github</mdui-chip></mdui-card><mdui-card clickable href="./typeto/index.html"><mdui-icon name="keyboard--outlined"class="item-icon"></mdui-icon><h1>TypeTo</h1><p>（仅限电脑使用，需要键盘）将键盘上的按键映射成其它字符，可以拿来整活</p></mdui-card><mdui-card clickable href="./passkey/index.html"><mdui-icon name="password"class="item-icon"></mdui-icon><h1>Passkey</h1><p>生成图像密文，不提供解密（懒）</p></mdui-card><mdui-card clickable href="./vv/index.html"><mdui-icon name="voicemail"class="item-icon"></mdui-icon><h1>VisualVoice</h1><p>将声音转换成颜色</p></mdui-card><mdui-card clickable href="./taple/index.html"><mdui-icon name="table_chart--outlined"class="item-icon"></mdui-icon><h1>Taple</h1><p>一个好看的表格，用canvas绘制</p><mdui-chip href="https://github.com/for-the-zero/Taple"target="_blank">Github</mdui-chip></mdui-card><mdui-card clickable href="./showon/index.html"><mdui-icon name="smart_screen--outlined"class="item-icon"></mdui-icon><h1>文本展示</h1><p>将文本展示在屏幕上</p></mdui-card><mdui-card clickable href="./updyn/index.html"><mdui-icon name="post_add"class="item-icon"></mdui-icon><h1>UP主动态查看器</h1><p>查看UP主的动态</p><mdui-chip href="https://github.com/for-the-zero/UpDyn"target="_blank">Github</mdui-chip></mdui-card><mdui-card clickable variant="outlined"style="text-align: center; user-select: none;"><h1>Coming Soon...</h1></mdui-card>-->
-        <mdui-collapse class="tools">
+        <div class="tools">
+            <m3e-loading-indicator></m3e-loading-indicator>
+        </div>
 
-            <!-- <mdui-card clickable href="#"><mdui-icon name="video_library--outlined"class="item-icon"></mdui-icon><h1>114514</h1><p>114514</p><mdui-chip href="#" icon="link" target="_blank">Github</mdui-chip></mdui-card>
-
-            <mdui-collapse-item value="item-2">
-                <mdui-list-item slot="header" icon="folder--outlined">Item 1</mdui-list-item>
-                <mdui-card clickable href="#"><mdui-icon name="video_library--outlined"class="item-icon"></mdui-icon><h1>114514</h1><p>114514</p><mdui-chip href="#" icon="link" target="_blank">Github</mdui-chip></mdui-card>
-            </mdui-collapse-item> -->
-
-            <mdui-circular-progress></mdui-circular-progress>
-        </mdui-collapse>
-        
     </div>
-    <script>mdui.setColorScheme('#59ffee')</script>
-    <script src="https://unpkg.com/jquery/dist/jquery.min.js"></script>
-    <script src="./links.js"></script>
-    <script src="./index.js"></script>
+    </m3e-theme>
+    <script defer src="https://cdn.jsdmirror.com/npm/jquery/dist/jquery.min.js"></script>
+    <script defer src="./links.js"></script>
+    <script defer src="./index.js"></script>
 </body>
 </html>

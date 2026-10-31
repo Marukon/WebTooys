@@ -90,7 +90,6 @@ class WtBall extends LitElement {
         .body {
             display: flex;
             flex-direction: column;
-            gap: 14px;
             align-items: flex-start;
             padding: 13px 14px;
             min-width: 0;
@@ -108,6 +107,7 @@ class WtBall extends LitElement {
             align-items: center;
             justify-content: center;
             width: 32px;
+            margin-top: 12px;
             height: 32px;
             border: none;
             border-radius: 8px;
@@ -139,8 +139,8 @@ class WtBall extends LitElement {
         this.hidden = false;
         this.isZh = (navigator.languages[0] || navigator.language || '').toLowerCase().startsWith('zh');
         this.t = this.isZh
-            ? { desc: '本项目是WebTooys的一部分', home: 'WebTooys 首页', hide: '隐藏此条', collapse: '收起面板' }
-            : { desc: 'This project is part of WebTooys', home: 'WebTooys Home', hide: 'Hide this bar', collapse: 'Collapse panel' };
+            ? { desc: '本项目是WebTooys的一部分', subdesc: '这里还有很多好玩或好用的东西', home: 'WebTooys 首页', hide: '隐藏此条', collapse: '收起面板' }
+            : { desc: 'This project is part of WebTooys', subdesc: 'There are also many fun or useful things here.', home: 'WebTooys Home', hide: 'Hide this bar', collapse: 'Collapse panel' };
         this.homeUrl = location.origin + '/';
     }
 
@@ -226,6 +226,7 @@ class WtBall extends LitElement {
                         aria-label="toggle panel" aria-expanded="${this.expanded}"><i></i></button>
                     <div class="body">
                         <p class="desc">${this.t.desc}</p>
+                        <p class="desc">${this.t.subdesc}</p>
                         <div class="btn-row">
                             <a class="icon-btn" href="${this.homeUrl}" target="_blank" rel="noopener" title="${this.t.home}" aria-label="${this.t.home}">${ICON.home}</a>
                             <button class="icon-btn" @click="${this.hideBar}" title="${this.t.hide}" aria-label="${this.t.hide}">${ICON.hide}</button>
